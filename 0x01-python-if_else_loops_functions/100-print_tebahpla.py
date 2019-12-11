@@ -6,4 +6,4 @@ for i in range(122, 96, -1):
     else:
         j = i
     print("{:s}".format(chr(j)), end="")
-    num +=1
+    num += 1
