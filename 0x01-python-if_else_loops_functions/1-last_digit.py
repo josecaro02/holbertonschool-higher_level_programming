@@ -5,7 +5,7 @@ print("Last digit of {:d} is ".format(number), end='')
 if number < 0:
     n_number = (number * -1) % 10
     str0 = "and is less than 6 and not 0"
-    print("-{:d} {}".format(n_number, str0) if n_number > 0 else "0 and is 0")
+    print("{:d} {}".format(-n_number, str0) if n_number > 0 else "0 and is 0")
 else:
     p_number = number % 10
     if p_number > 5:
