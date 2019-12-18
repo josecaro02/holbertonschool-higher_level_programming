@@ -8,7 +8,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	size_t len_list, zero_len, i, count_len;
+	size_t len_list, zero_len, count_len;
 	listint_t *end_list, *beg_list;
 
 	if (head == NULL)
@@ -17,24 +17,22 @@ int is_palindrome(listint_t **head)
 	{
 		len_list = zero_len = 0;
 		end_list = beg_list = *head;
-		while (beg_list != NULL)
+		while (end_list->next != NULL)
 		{
-			beg_list = beg_list->next;
+			end_list = end_list->next;
 			len_list++;
 		}
-		beg_list = *head;
-		count_len = len_list = len_list - 1;
+		count_len = len_list;
 		while (count_len > zero_len)
 		{
-			end_list = beg_list = *head;
-			for (i = 0; i < count_len; i++)
-				end_list = end_list->next;
-			for (i = 0; i < zero_len; i++)
-				beg_list = beg_list->next;
-			count_len--;
-			zero_len++;
 			if (end_list->n != beg_list->n)
 				return (0);
+			end_list--;
+			end_list--;
+			beg_list++;
+			beg_list++;
+			count_len--;
+			zero_len++;
 		}
 		return (1);
 	}
