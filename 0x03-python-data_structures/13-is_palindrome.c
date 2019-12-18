@@ -1,26 +1,6 @@
 #include "lists.h"
 
 /**
- *listint_len - return the size of the linked list
- *@h: linked list
- *
- *Return: size of elements
- */
-
-size_t listint_len(const listint_t *h)
-{
-	size_t n;
-
-	n = 0;
-	while (h != NULL)
-	{
-		h = h->next;
-		n++;
-	}
-	return (n);
-}
-
-/**
  *is_palindrome - checks if a linked list is palindrome
  *@head: head of the linked list
  *
@@ -33,9 +13,15 @@ int is_palindrome(listint_t **head)
 
 	if (*head)
 	{
-		zero_len = 0;
-		count_len = len_list = listint_len(*head) - 1;
+		len_list = zero_len = 0;
 		end_list = beg_list = zero_list = *head;
+		while (zero_list != NULL)
+		{
+			zero_list = zero_list->next;
+			len_list++;
+		}
+		zero_list = beg_list;
+		count_len = len_list = len_list - 1;
 		while (count_len > zero_len)
 		{
 			for (i = 0; i < count_len; i++)
