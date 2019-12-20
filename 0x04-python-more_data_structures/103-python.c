@@ -10,11 +10,22 @@
  */
 void print_python_bytes(PyObject *p)
 {
+	int i;
+
 	if (PyBytes_Check(p))
 	{
 		printf("[.] bytes object info\n");
 		printf("  size: %lu\n", PyBytes_Size(p));
 		printf("  trying string: %s\n", PyBytes_AsString(p));
+		if (PyBytes_Size(p) >= 10)
+			printf("  first 10 bytes: ");
+		else
+			printf("  first %lu bytes: ", PyBytes_Size(p) + 1);
+		for (i = 0; i < PyBytes_Size(p); i++)
+		{
+			printf("%02hhx ", (PyBytes_AsString(p)[i]));
+		}
+		printf("00\n");
 	}
 	else
 	{
