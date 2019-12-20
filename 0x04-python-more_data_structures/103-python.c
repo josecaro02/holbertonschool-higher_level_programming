@@ -23,7 +23,9 @@ void print_python_bytes(PyObject *p)
 			printf("  first %lu bytes: ", PyBytes_Size(p) + 1);
 		for (i = 0; i < PyBytes_Size(p) && i <= 9; i++)
 		{
-			printf("%02hhx ", (PyBytes_AsString(p)[i]));
+			printf("%02hhx", (PyBytes_AsString(p)[i]));
+			if (i < 9)
+				printf(" ");
 		}
 		if (PyBytes_Size(p) < 10)
 			printf("00\n");
