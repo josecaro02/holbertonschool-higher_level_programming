@@ -21,7 +21,7 @@ void print_python_float(PyObject *p)
 	else
 	{
 		printf("[.] float object info\n");
-		printf("  [ERROR] Invalid List Object\n");
+		printf("  [ERROR] Invalid Float Object\n");
 	}
 }
 /**
@@ -91,6 +91,6 @@ void print_python_list(PyObject *p)
 	else
 	{
 		printf("[*] Python list info\n");
-		printf("  [ERROR] Invalid Bytes Object\n");
+		printf("  [ERROR] Invalid List Object\n");
 	}
 }
