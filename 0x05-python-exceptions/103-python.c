@@ -16,7 +16,7 @@ void print_python_float(PyObject *p)
 		printf("[.] float object info\n");
 		value = PyOS_double_to_string(PyFloat_AsDouble(p), 'r',
 					      0, Py_DTSF_ADD_DOT_0, NULL);
-		printf("  %s\n", value);
+		printf("  value: %s\n", value);
 	}
 	else
 	{
