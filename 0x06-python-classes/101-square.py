@@ -36,21 +36,21 @@ class Square:
         return (self.__size ** 2)
 
     def __repr__(self):
-        if self.__size == 0:
-            str = '\n'
-            return(str)
+        str = ""
+        if self.size == 0:
+            str = str + '\n'
         else:
             str = ""
-            for i in range(self.__position[1]):
+            for i in range(self.position[1]):
                 str = str + ""
-            for i in range(self.__size):
+            for i in range(self.size):
                 for k in range(self.__position[0]):
                     str = str + " "
                 for j in range(self.__size):
                     str = str + "#"
                 str = str + '\n'
             str = str[:-1]
-            return (str)
+        return (str)
 
     def my_print(self):
         if self.__size == 0:
