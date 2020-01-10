@@ -40,7 +40,6 @@ class Square:
         if self.size == 0:
             str = str + '\n'
         else:
-            str = ""
             for i in range(self.position[1]):
                 str = str + ""
             for i in range(self.size):
