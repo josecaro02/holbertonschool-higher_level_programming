@@ -37,7 +37,8 @@ class Square:
 
     def __repr__(self):
         if self.__size == 0:
-            return("")
+            str = '\n'
+            return(str)
         else:
             str = ""
             for i in range(self.__position[1]):
