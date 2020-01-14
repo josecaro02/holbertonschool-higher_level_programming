@@ -1,5 +1,5 @@
 #test add_integer
-    """
+"""
     >>> func = __import__("0-add_integer").add_integer
 
     Returns a + b
@@ -38,4 +38,9 @@
         ...
     OverflowError: cannot convert float infinity to integer
 
-    """
+    >>> func(10, 20, 30) #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() takes from 1 to 2 positional arguments...
+
+"""
