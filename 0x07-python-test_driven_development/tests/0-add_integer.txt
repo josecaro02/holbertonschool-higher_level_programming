@@ -32,15 +32,12 @@
         ...
     TypeError: add_integer() missing 1 required positional argument: 'a'
 
-    >>> import math
-    >>> math.floor(func(1e1000)) == func(1e100)
+    >>> func(float('inf'))
     Traceback (most recent call last):
         ...
     OverflowError: cannot convert float infinity to integer
 
-    >>> func(10, 20, 30) #doctest: +ELLIPSIS
-    Traceback (most recent call last):
-        ...
-    TypeError: add_integer() takes from 1 to 2 positional arguments...
+    >>> func(10.5)
+    108
 
 """
