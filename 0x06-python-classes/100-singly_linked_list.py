@@ -54,9 +54,12 @@ class SinglyLinkedList:
                     aux.next_node = new
 
     def __repr__(self):
-        aux = self.__head
-        while aux.next_node is not None:
-            print(aux.data)
-            aux = aux.next_node
-        print("{:d}".format(aux.data), end="")
-        return("")
+        if self.__head is not None:
+            aux = self.__head
+            while aux.next_node is not None:
+                print(aux.data)
+                aux = aux.next_node
+            print("{:d}".format(aux.data), end="")
+            return("")
+        else:
+            return("")
