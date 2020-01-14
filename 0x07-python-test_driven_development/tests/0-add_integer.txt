@@ -1,0 +1,41 @@
+#test add_integer
+    """
+    >>> func = __import__("0-add_integer").add_integer
+
+    Returns a + b
+    >>> func (10)
+    108
+
+    Returns error, argument 1 is not an integer
+    >>> func('a')
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    Returns error, argument 2 is not an integer
+    >>> func(10, 'b')
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    Returns a + b even if these are floats
+    >>> func (10.5, 20.5)
+    30
+
+    Returns the number given plus 98
+    >>> func(10)
+    108
+
+    Prints error if the user don´t send any argument
+    >>> func()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    >>> import math
+    >>> math.floor(func(1e1000)) == func(1e100)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+    """
