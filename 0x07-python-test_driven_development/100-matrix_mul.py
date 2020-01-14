@@ -7,6 +7,10 @@ Returns the new matrix
 
 
 def matrix_mul(m_a, m_b):
+    ''' This func raise Type errors
+    checks if the matrix can be multiplied
+    returns new matrix
+    '''
     if type(m_a) != list:
         raise TypeError('m_a must be a list')
     else:

@@ -1,69 +1,69 @@
-g#test multiply matrix
+#test multiply matrix
     """
-    >>> mx_mul = __import__("100-matrix_mul").matrix_mul
+    >>> mx_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
 
     Return correct matrix result
     >>> print(mx_mul([[1, 2]], [[3, 4], [5, 6]]))
-    [[13, 16]]
+    [[13 16]]
 
     >>> print(mx_mul("hola", [[3, 4], [5, 6]]))
     Traceback (most recent call last):
         ...
-    TypeError: m_a must be a list
+    ValueError: Lazy: m_a must be a list
 
     >>> print(mx_mul([[3, 4], [5, 6]], "hola"))
     Traceback (most recent call last):
         ...
-    TypeError: m_b must be a list
+    ValueError: Lazy: m_b must be a list
 
     >>> print(mx_mul([1], [[3, 4], [5, 6]]))
     Traceback (most recent call last):
         ...
-    TypeError: m_a must be a list of lists
+    ValueError: Lazy: m_a must be a list of lists
 
     >>> print(mx_mul([[3, 4], [5, 6]], [5]))
     Traceback (most recent call last):
         ...
-    TypeError: m_b must be a list of lists
+    ValueError: Lazy: m_b must be a list of lists
 
     >>> print(mx_mul([], [[3, 4], [5, 6]]))
     Traceback (most recent call last):
         ...
-    ValueError: m_a can't be empty
+    TypeError: Lazy: m_a can't be empty
 
     >>> print(mx_mul([[]], [[3, 4], [5, 6]]))
     Traceback (most recent call last):
         ...
-    ValueError: m_a can't be empty
+    TypeError: Lazy: m_a can't be empty
 
     >>> print(mx_mul([[3, 4], [5, 6]], []))
     Traceback (most recent call last):
         ...
-    ValueError: m_b can't be empty
+    TypeError: Lazy: m_b can't be empty
 
     >>> print(mx_mul([[3, 4], [5, 6]], [[]]))
     Traceback (most recent call last):
         ...
-    ValueError: m_b can't be empty
+    TypeError: Lazy: m_b can't be empty
 
     >>> print(mx_mul([[1, "hola"]], [[3, 4], [5, 6]]))
     Traceback (most recent call last):
         ...
-    TypeError: m_a should contain only integers or floats
+    ValueError: Lazy: m_a should contain only integers or floats
 
     >>> print(mx_mul([[1, 2]], [["hola", 4], [5, 6]]))
     Traceback (most recent call last):
         ...
-    TypeError: m_b should contain only integers or floats
+    ValueError: Lazy: m_b should contain only integers or floats
 
     >>> print(mx_mul([[1, 2]], [[3, 4, 5], [5, 6]]))
     Traceback (most recent call last):
         ...
-    TypeError: each row of m_b must be of the same size
+    ValueError: Lazy: each row of m_b must be of the same size
 
     >>> print(mx_mul([[1, 2]], [[3, 4], [5, 6], [7, 8]]))
     Traceback (most recent call last):
         ...
-    ValueError: m_a and m_b can't be multiplied
+    TypeError: Lazy: m_a and m_b can't be multiplied
 
     """
