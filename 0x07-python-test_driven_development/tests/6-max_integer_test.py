@@ -23,3 +23,9 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_tuple(self):
         self.assertEqual(max_integer(("ab", "ac", "ad")), "ad")
+
+    def test_max_beg(self):
+        self.assertEqual(max_integer([4, 3, 1, 2]), 4)
+
+    def test_one_elem(self):
+        self.assertEqual(max_integer([4]), 4)
