@@ -1,5 +1,5 @@
-g#test multiply matrix
-    """
+#test multiply matrix
+"""
     >>> mx_mul = __import__("100-matrix_mul").matrix_mul
 
     Return correct matrix result
