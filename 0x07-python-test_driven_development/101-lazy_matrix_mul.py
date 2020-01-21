@@ -42,14 +42,14 @@ def lazy_matrix_mul(m_a, m_b):
     for i in m_a:
         for i_1 in i:
             if type(i_1) != int and type(i_1) != float:
-                raise ValueError('Lazy: m_a should contain only integers \
-                or floats')
+                msg = 'Lazy: m_a should contain only integers or floats'
+                raise ValueError(msg)
 
     for j in m_b:
         for j_1 in j:
             if type(j_1) != int and type(j_1) != float:
-                raise ValueError('Lazy: m_b should contain only integers \
-                or floats')
+                msg = 'Lazy: m_b should contain only integers or floats'
+                raise ValueError(msg)
 
     size_m_1 = len(m_a[0])
     size_m_2 = len(m_b[0])
