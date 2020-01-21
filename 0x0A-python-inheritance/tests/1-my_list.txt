@@ -1,0 +1,27 @@
+#test MyList
+"""
+
+    >>> MyList = __import__('1-my_list').MyList
+    >>> lista = MyList()
+
+    >>> lista.print_sorted()
+    []
+
+    >>> print(lista)
+    []
+
+    Append values to list
+    >>> lista.append(4)
+    >>> lista.append(3)
+    >>> lista.append(2)
+    >>> lista.append(1)
+
+    Print list sorted
+    >>> lista.print_sorted()
+    [1, 2, 3, 4]
+
+    Print list
+    >>> print(lista)
+    [4, 3, 2, 1]
+
+"""
