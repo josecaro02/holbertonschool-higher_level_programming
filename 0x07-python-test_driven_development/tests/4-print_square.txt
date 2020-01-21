@@ -41,4 +41,9 @@
         ...
     TypeError: size must be an integer
 
+    >>> print_sq(-5)
+    Traceback (most recent call last):
+        ...
+    ValueError: size must be >= 0
+
     """
