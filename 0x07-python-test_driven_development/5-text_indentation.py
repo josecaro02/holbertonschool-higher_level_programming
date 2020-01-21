@@ -11,16 +11,21 @@ def text_indentation(text):
     is not a string.
     And Remove spaces at the beginnig or end of the lie
     '''
+    i = 0
     if type(text) != str:
         raise TypeError('text must be a string')
     else:
-        for i in range(len(text)):
+        while i < len(text):
             if text[i] == "." or text[i] == "?" or \
                text[i] == ":":
                 print("{:s}\n".format(text[i]))
-            elif text[i] == " " and (text[i - 1] == "." or \
-                                     text[i - 1] == "?" or \
+            elif text[i] == " " and (text[i - 1] == "." or
+                                     text[i - 1] == "?" or
                                      text[i - 1] == ":"):
-                    continue
+                while text[i + 1] == " ":
+                    i = i + 1
+                i = i + 1
+                continue
             else:
                 print("{:s}".format(text[i]), end="")
+            i += 1
