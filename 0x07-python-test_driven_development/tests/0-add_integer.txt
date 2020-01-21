@@ -40,4 +40,9 @@
     >>> func(10.5)
     108
 
+    >>> func(float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
 """

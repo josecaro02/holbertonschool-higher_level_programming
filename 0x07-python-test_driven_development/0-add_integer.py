@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 '''Function that add 2 numbers( float and integer)
 the result will be an integer.
 Function return the value.
