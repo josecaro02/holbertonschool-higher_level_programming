@@ -1,0 +1,51 @@
+#test divide matrix
+    """
+    >>> matrix_div = __import__("2-matrix_divided").matrix_divided
+
+    Returns correct division with 2 decimal
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_div(matrix, 2))
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+    Prints error, size of matrix is wrong
+    >>> matrix = [[2, 3, 4], [5, 6]]
+    >>> matrix_div(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+    Prints error, no all the values are integers or floats
+    >>> matrix = [[1, 2, 3], ['hola', 2, 3]]
+    >>> matrix_div(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    Prints error when div is 0
+    >>> matrix = [[1, 2, 3], [2, 2, 3]]
+    >>> matrix_div(matrix, 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+    Prints error if "div" is not a number
+    >>> matrix = [[1, 2, 3], [2, 2, 3]]
+    >>> matrix_div(matrix, 'a')
+    Traceback (most recent call last):
+        ...
+    TypeError: unsupported operand type(s) for /: 'int' and 'str'
+
+    Prints error if arg 2 is not passed
+    >>> matrix_div(matrix)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    Prints error if no arg was pass
+    >>> matrix_div()
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+    
+    """

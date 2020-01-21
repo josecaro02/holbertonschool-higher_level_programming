@@ -1,0 +1,32 @@
+#test text identation
+    """
+
+    >>> text_id = __import__("5-text_indentation").text_indentation
+
+    Print correct message
+    >>> text_id("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere?the end """)
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
+    the end 
+
+    Prints error if no arg are passed
+    >>> text_id()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    Prints error if more than 1 arg is passed
+    >>> text_id("test text.", "second test:") #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() takes 1 positional argument but...
+
+    Prints error if arg type is not a string
+    >>> text_id(45.0)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string

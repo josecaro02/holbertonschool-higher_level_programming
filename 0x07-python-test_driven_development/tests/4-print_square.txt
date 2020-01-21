@@ -1,0 +1,44 @@
+#test print square
+    """
+
+    >>> print_sq = __import__("4-print_square").print_square
+
+    Print square of an int bigger than 0
+    >>> print_sq(2)
+    ##
+    ##
+
+    Nothing happen if size is 0
+    >>> print_sq(0)
+
+    Print error if a float is given
+    >>> print_sq(2.0)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    Print error if size is a float and less than 0
+    >>> print_sq(-2.0)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    Prints error if no size is given
+    >>> print_sq()
+    Traceback (most recent call last):
+        ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+    Print error if more than 1 arg is passed
+    >>> print_sq(1, 3) #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: print_square() takes 1 positional argument but ...
+
+    Print error if a string is passed
+    >>> print_sq("hola")
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    """
