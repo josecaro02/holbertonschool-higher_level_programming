@@ -7,9 +7,9 @@ file_name = "add_item.json"
 len_argv = len(sys.argv)
 try:
     my_list = load_from_json_file("add_item.json")
-    for i in range(1, len_argv):
-        my_list.append(sys.argv[i])
 except:
     my_list = []
 finally:
+    for i in range(1, len_argv):
+        my_list.append(sys.argv[i])
     save_to_json_file(my_list, "add_item.json")
