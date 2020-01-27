@@ -20,8 +20,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """ method that convert a dictionary to a json"""
         if not list_dictionaries:
-            msg_rtn = "[]"
-            return (msg_rtn)
+            return ("[]")
         return json.dumps(list_dictionaries)
 
     def from_json_string(json_string):
