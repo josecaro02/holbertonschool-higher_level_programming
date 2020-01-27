@@ -12,6 +12,62 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    @property
+    def width(self):
+        """ Getter of attribute width """
+        return (self.__width)
+
+    @width.setter
+    def width(self, width):
+        """ Setter of attribute width """
+        if type(width) != int:
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must > 0")
+        self.__width = width
+
+    @property
+    def height(self):
+        """ Getter attribute Height """
+        return (self.__height)
+
+    @height.setter
+    def height(self, height):
+        """ Setter attribute height """
+        if type(height) != int:
+            raise TypeError('height must be an integer')
+        if height <= 0:
+            raise TypeError('height must > 0')
+        self.__height = height
+
+    @property
+    def x(self):
+        """ Getter attribute translation x """
+        return (self.__x)
+
+    @x.setter
+    def x(self, x):
+        """ Setter attribute translation x """
+        if type(x) != int:
+            raise TypeError('x must be an integer')
+        if x < 0:
+            raise ValueError('x must be >= 0')
+        self.__x = x
+
+    @property
+    def y(self):
+        """ Getter attribute translation Y """
+        return (self.__y)
+
+    @y.setter
+    def y(self, y):
+        """ Setter attribute translation Y """
+        if type(y) != int:
+            raise TypeError('y must be an integer')
+        if y < 0:
+            raise ValueError('y must be >= 0')
+        self.__y = y
+
     def area(self):
         """ Method returns the area of the rectangle """
         return (self.width * self.height)
@@ -69,59 +125,3 @@ class Rectangle(Base):
         print("[Rectangle] ({}) {}/{} - {}/{}".
               format(self.id, self.x, self.y, self.width, self.height), end="")
         return("")
-
-    @property
-    def width(self):
-        """ Getter of attribute width """
-        return (self.__width)
-
-    @width.setter
-    def width(self, value):
-        """ Setter of attribute width """
-        if type(value) != int:
-            raise TypeError('width must be an integer')
-        if value <= 0:
-            raise ValueError('width must > 0')
-        self.__width = value
-
-    @property
-    def height(self):
-        """ Getter attribute Height """
-        return (self.__height)
-
-    @height.setter
-    def height(self, height):
-        """ Setter attribute height """
-        if type(height) != int:
-            raise TypeError('height must be an integer')
-        if height <= 0:
-            raise TypeError('height must > 0')
-        self.__height = height
-
-    @property
-    def x(self):
-        """ Getter attribute translation x """
-        return (self.__x)
-
-    @x.setter
-    def x(self, x):
-        """ Setter attribute translation x """
-        if type(x) != int:
-            raise TypeError('x must be an integer')
-        if x < 0:
-            raise ValueError('x must be >= 0')
-        self.__x = x
-
-    @property
-    def y(self):
-        """ Getter attribute translation Y """
-        return (self.__y)
-
-    @y.setter
-    def y(self, value):
-        """ Setter attribute translation Y """
-        if type(value) != int:
-            raise TypeError('y must be an integer')
-        if value < 0:
-            raise ValueError('y must be >= 0')
-        self.__y = value
