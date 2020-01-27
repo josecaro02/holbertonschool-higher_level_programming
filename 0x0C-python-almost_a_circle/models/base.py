@@ -27,8 +27,9 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """ method that converts a json to a  dictionary"""
+        list_rtn = []
         if json_string is None:
-            return ("[]")
+            return (list_rtn)
         return (json.loads(json_string))
 
     @classmethod
