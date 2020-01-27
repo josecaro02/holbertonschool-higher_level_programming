@@ -33,10 +33,11 @@ class Base:
     def save_to_file(cls, list_objs):
         """ method that save a list of objects into a file  """
         list_dicts = []
-        for i in range(len(list_objs)):
-            dict_class = list_objs[i].to_dictionary()
-            list_dicts.append(dict_class)
-        obj_class = cls.to_json_string(list_dicts)
+        if list_objs is not None:
+            for i in range(len(list_objs)):
+                dict_class = list_objs[i].to_dictionary()
+                list_dicts.append(dict_class)
+            obj_class = cls.to_json_string(list_dicts)
         file_name = cls.__name__
         file_name += ".json"
         with open(file_name, 'w', encoding="utf-8") as f:
@@ -88,13 +89,11 @@ class Base:
         """ Method that instantiate an objecte in base of a dict info """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 2)
-            for i in dictionary:
-                setattr(dummy, i, dictionary[str(i)])
+            dummt.update(**dictionary)
             return (dummy)
         if cls.__name__ == "Square":
             dummy = cls(1)
-            for i in dictionary:
-                setattr(dummy, i, dictionary[str(i)])
+            dummy.update(**dictionary)
             return (dummy)
 
     @classmethod
