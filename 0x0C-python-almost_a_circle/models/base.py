@@ -89,7 +89,7 @@ class Base:
         """ Method that instantiate an objecte in base of a dict info """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 2)
-            dummt.update(**dictionary)
+            dummy.update(**dictionary)
             return (dummy)
         if cls.__name__ == "Square":
             dummy = cls(1)
