@@ -8,7 +8,6 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """ __init__ method """
-        self.size = size
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -57,9 +56,5 @@ class Square(Rectangle):
     @size.setter
     def size(self, size):
         """ Setter size of square """
-        if type(size) != int:
-            raise TypeError('width must be an integer')
-        if size <= 0:
-            raise ValueError('width must be > 0')
         self.width = size
         self.height = size
