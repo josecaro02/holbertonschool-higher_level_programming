@@ -1,12 +1,16 @@
 #!/usr/bin/python3
+"""Base class file """
 import json
 import csv
 
+
 class Base:
+    """Base class"""
 
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """__init__ method"""
         if id is not None:
             self.id = id
         else:
@@ -14,20 +18,20 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
-
+        """ method that convert a dictionary to a json"""
         if list_dictionaries is None:
             return ("[]")
         return json.dumps(list_dictionaries)
 
     def from_json_string(json_string):
-
+        """ method that converts a json to a  dictionary"""
         if json_string is None:
             return ("[]")
         return (json.loads(json_string))
 
     @classmethod
     def save_to_file(cls, list_objs):
-
+        """ method that save a list of objects into a file  """
         list_dicts = []
         for i in range(len(list_objs)):
             dict_class = list_objs[i].to_dictionary()
@@ -40,7 +44,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-
+        """ method that save a list of objects into a csv file """
         list_names = []
         list_values = []
         created_names = 0
@@ -55,18 +59,14 @@ class Base:
         file_name = cls.__name__
         file_name += ".csv"
         with open(file_name, 'w', newline='') as csvfile:
-#            writer = csv.DictWriter(csvfile, fieldnames=list_names)
-#            writer.writeheader()
             writer = csv.writer(csvfile)
             writer.writerow(list_names)
-#            for i in range(len(list_objs)):
             dict_class = list_objs[i].to_dictionary()
-#                print(dict_class)
             writer.writerow(dict_class)
 
     @classmethod
     def load_from_file_csv(cls):
-
+        """ Method that load the info of a csv file """
         dict_csv = {}
         list_inst = []
         file_name = cls.__name__
@@ -85,7 +85,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-
+        """ Method that instantiate an objecte in base of a dict info """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 2)
             for i in dictionary:
@@ -94,12 +94,12 @@ class Base:
         if cls.__name__ == "Square":
             dummy = cls(1)
             for i in dictionary:
-                 setattr(dummy, i , dictionary[str(i)])
+                setattr(dummy, i, dictionary[str(i)])
             return (dummy)
 
     @classmethod
     def load_from_file(cls):
-
+        """ Method that loads info from a json file and asign it to a object"""
         list_inst = []
         file_name = cls.__name__
         file_name += ".json"

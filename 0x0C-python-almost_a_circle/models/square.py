@@ -1,18 +1,23 @@
 #!/usr/bin/python3
+""" Square class file """
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """ Square class that inherits Rectangle """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """ __init__ method """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """ overload method __str__ """
         print("[Square] ({}) {}/{} - {}".
               format(self.id, self.x, self.y, self.width), end="")
         return("")
 
     def update(self, *args, **kwargs):
+        """ Method updates info of square """
         if len(args) > 0:
             for att in range(len(args)):
                 if att == 0:
@@ -35,7 +40,7 @@ class Square(Rectangle):
                     self.id = value
 
     def to_dictionary(self):
-
+        """ Converts square info to a dictionary """
         dict_rect = dict()
         dict_rect["id"] = self.id
         dict_rect["size"] = self.height
@@ -45,10 +50,12 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """ Getter size of square """
         return self.width
 
     @size.setter
     def size(self, size):
+        """ Setter size of square """
         if type(size) != int:
             raise TypeError('width must be an integer')
         if size <= 0:
