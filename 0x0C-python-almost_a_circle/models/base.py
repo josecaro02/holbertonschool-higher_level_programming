@@ -39,7 +39,7 @@ class Base:
             for i in range(len(list_objs)):
                 dict_class = list_objs[i].to_dictionary()
                 list_dicts.append(dict_class)
-            obj_class = cls.to_json_string(list_dicts)
+        obj_class = cls.to_json_string(list_dicts)
         file_name = cls.__name__
         file_name += ".json"
         with open(file_name, 'w', encoding="utf-8") as f:
