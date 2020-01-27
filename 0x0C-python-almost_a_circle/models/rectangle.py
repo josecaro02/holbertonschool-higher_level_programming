@@ -76,13 +76,13 @@ class Rectangle(Base):
         return (self.__width)
 
     @width.setter
-    def width(self, width):
+    def width(self, value):
         """ Setter of attribute width """
-        if type(width) != int:
+        if type(value) != int:
             raise TypeError('width must be an integer')
-        if width <= 0:
+        if value <= 0:
             raise ValueError('width must > 0')
-        self.__width = width
+        self.__width = value
 
     @property
     def height(self):
@@ -118,10 +118,10 @@ class Rectangle(Base):
         return (self.__y)
 
     @y.setter
-    def y(self, y):
+    def y(self, value):
         """ Setter attribute translation Y """
-        if type(y) != int:
+        if type(value) != int:
             raise TypeError('y must be an integer')
-        if y < 0:
+        if value < 0:
             raise ValueError('y must be >= 0')
-        self.__y = y
+        self.__y = value
