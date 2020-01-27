@@ -63,10 +63,12 @@ class Base:
         file_name = cls.__name__
         file_name += ".csv"
         with open(file_name, 'w', newline='') as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(list_names)
-            dict_class = list_objs[i].to_dictionary()
-            writer.writerow(dict_class)
+            writer = csv.DictWriter(csvfile, fieldnames=list_names)
+
+            writer.writeheader()
+            for i in range(len(list_objs)):
+                dict_class = list_objs[i].to_dictionary()
+                writer.writerow(dict_class)
 
     @classmethod
     def load_from_file_csv(cls):
@@ -77,12 +79,11 @@ class Base:
         file_name += ".csv"
         try:
             with open(file_name, 'r') as csvfile:
-                reader = csv.reader(csvfile)
+                reader = csv.DictReader(csvfile)
                 for row in reader:
-                    print(row)
-                    for i in row:
-                        dict_csv[str(row)] = row[i]
-                    list_inst.append(cls.create(**row))
+                    for key in row:
+                        dict_csv[key] = int(row[key])
+                    list_inst.append(cls.create(**dict_csv))
                 return (list_inst)
         except:
             return (list_inst)
