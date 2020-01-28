@@ -9,7 +9,7 @@ class test_RectangleModel(unittest.TestCase):
     def test_id(self):
         """ test ids of the base model"""
         b3 = Rectangle(1, 2)
-        self.assertEqual(b3.id, 2)
+        self.assertEqual(b3.id, 4)
         b2 = Rectangle(1, 2, 4, 3, 54)
         self.assertEqual(b2.id, 54)
 
