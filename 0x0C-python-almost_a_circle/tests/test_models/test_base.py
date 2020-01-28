@@ -1,11 +1,22 @@
 #!/usr/bin/python3
 """ Unit test for base model file """
 import unittest
+import pep8
 from models.base import Base
 
 
 class test_BaseModel(unittest.TestCase):
     """ Tests of the model base"""
+
+    def test_pep8(self):
+        """ Test pep8 of model base """
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/base.py',
+                                        'models/rectangle.py',
+                                        'models/square.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
+
     def test_id(self):
         """ Test id to the base model """
         b3 = Base()
