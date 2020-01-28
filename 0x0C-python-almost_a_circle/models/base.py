@@ -2,6 +2,7 @@
 """Base class file """
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -115,3 +116,59 @@ class Base:
                 return (list_inst)
         except:
             return(list_inst)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ static methdo that prints squares in tk """
+        init_pos = -300
+        turtle.screensize(600, 600)
+        turtle.shape("turtle")
+        turtle.penup()
+        turtle.setpos(init_pos, 250)
+        turtle.pendown()
+        for rect in list_rectangles:
+            turtle.setheading(0)
+            turtle.color("red")
+            turtle.forward(rect.x)
+            init_pos = init_pos + rect.x + rect.width + 50
+            turtle.right(90)
+            turtle.forward(rect.y)
+            turtle.color("green", "green")
+            turtle.begin_fill()
+            turtle.forward(rect.height)
+            turtle.left(90)
+            turtle.forward(rect.width)
+            turtle.left(90)
+            turtle.forward(rect.height)
+            turtle.left(90)
+            turtle.forward(rect.width)
+            turtle.end_fill()
+            turtle.penup()
+            turtle.setpos(init_pos, 250)
+            turtle.pendown()
+        init_pos = -300
+        turtle.screensize(600, 600)
+        turtle.penup()
+        turtle.setpos(init_pos, 0)
+        turtle.pendown()
+        for rect in list_squares:
+            turtle.setheading(0)
+            turtle.color("red")
+            turtle.forward(rect.x)
+            init_pos = init_pos + rect.x + rect.width + 50
+            turtle.right(90)
+            turtle.forward(rect.y)
+            turtle.color("green", "green")
+            turtle.begin_fill()
+            turtle.forward(rect.height)
+            turtle.left(90)
+            turtle.forward(rect.width)
+            turtle.left(90)
+            turtle.forward(rect.height)
+            turtle.left(90)
+            turtle.forward(rect.width)
+            turtle.end_fill()
+            turtle.penup()
+            turtle.setpos(init_pos, 0)
+            turtle.pendown()
+        turtle.getscreen()._root.mainloop()
