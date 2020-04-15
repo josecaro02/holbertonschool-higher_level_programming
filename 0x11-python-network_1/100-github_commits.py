@@ -9,14 +9,10 @@ if __name__ == "__main__":
         url = "https://api.github.com/repos/{}/{}/commits".\
               format(sys.argv[2], sys.argv[1])
         response = requests.get(url)
-        for i in range(0, 10):
-            print("{}: ".format(response.json()[i].get('sha')), end="")
-            name = None
-            commit = response.json()[i].get('commit')
-            if commit:
-                author = commit.get('author')
-            if author:
-                name = author.get('name')
+        response = response.json()
+        for i in response[:10]:
+            print("{}: ".format(i.get('sha')), end="")
+            name = i.get('commit').get('author').get('name')
             print("{}".format(name))
     except ValueError:
         print("Not a valid JSON")
