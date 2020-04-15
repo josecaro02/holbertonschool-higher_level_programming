@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Make a request using urllib """
+""" Make a request using request """
 import requests
 import sys
 
