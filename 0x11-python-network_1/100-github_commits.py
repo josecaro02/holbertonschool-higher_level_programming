@@ -11,9 +11,12 @@ if __name__ == "__main__":
         response = requests.get(url)
         for i in range(0, 10):
             print("{}: ".format(response.json()[i].get('sha')), end="")
-            author = response.json()[i].get('commit').get('author').get('name')
-            if not author:
-                author = None
-            print("{}".format(author))
+            name = None
+            commit = response.json()[i].get('commit')
+            if commit:
+                author = commit.get('author')
+            if author:
+                name = author.get('name')
+            print("{}".format(name))
     except ValueError:
         print("Not a valid JSON")
