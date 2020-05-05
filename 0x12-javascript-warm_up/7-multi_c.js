@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const myArg = process.argv;
-if (parseInt(myArg[2]) && parseInt(myArg[2]) >= 0) {
+if (parseInt(myArg[2])) {
   for (let i = 0; i < parseInt(myArg[2]); i++) {
     console.log('C is fun');
   }
