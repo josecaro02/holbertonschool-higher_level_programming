@@ -13,7 +13,7 @@ const options = {
 };
 
 function callback (error, response, body) {
-  if (!error && response.statusCode === 200) {
+  if (!error) {
     const info = JSON.parse(body);
     for (let i = 0; i < info.count; i++) {
       const characters = info.results[i].characters;
@@ -24,8 +24,6 @@ function callback (error, response, body) {
       }
     }
     console.log(count);
-  } else if (error) {
-    console.log(error);
   }
 }
 request(options, callback);
