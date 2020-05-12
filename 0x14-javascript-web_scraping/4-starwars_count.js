@@ -18,7 +18,7 @@ function callback (error, response, body) {
     for (let i = 0; i < info.count; i++) {
       const characters = info.results[i].characters;
       for (let j = 0; j < characters.length; j++) {
-        if (characters[j].search('/18') !== -1) {
+        if (characters[j].search('190') > 0) {
           count++;
         }
       }
