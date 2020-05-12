@@ -18,12 +18,14 @@ function callback (error, response, body) {
     for (let i = 0; i < info.count; i++) {
       const characters = info.results[i].characters;
       for (let j = 0; j < characters.length; j++) {
-        if (characters[j].search('190') > 0) {
+        if (characters[j].search('18') > 0) {
           count++;
         }
       }
     }
     console.log(count);
+  } else if (error) {
+    console.log(error);
   }
 }
 request(options, callback);
