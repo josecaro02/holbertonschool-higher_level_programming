@@ -15,7 +15,6 @@ const options = {
 function callback (error, response, body) {
   if (!error && response.statusCode === 200) {
     const info = body;
-    console.log(info);
     fs.appendFile(myArgs[3], info, 'utf8', (err, data) => {
       if (err) {
         console.log(err);
